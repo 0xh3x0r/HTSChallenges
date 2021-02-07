@@ -7,6 +7,17 @@
 using namespace std;
 
 
+/*
+	Metin.h used in this challange is my own wrapper(Turkish) class for string manipulation processes. 
+	-> You can change the morse2ascii map to function in lowercase characters
+	-> I used lodepng library to convert IDAT to rawpixels. Everything used in this project already embedded to itself
+	
+
+	Let me now if you encounter a problem!
+	GL, Happy coding ^.^
+
+*/
+
 std::map<string, char > morse2ascii =
 {
 	{ ".-"		,	'A' },
@@ -141,7 +152,7 @@ void decodeImage(const char* filename)
 			}
 		}
 	}
-	cout << "Pixel Sayisi : " << whiteDotLocations.size() <<endl;
+	cout << "White pixels detected : " << whiteDotLocations.size() <<endl;
 	// * Decode ascii chars
 
 	cout << "Decoding ascii characters" << endl;
@@ -166,7 +177,7 @@ void decodeImage(const char* filename)
 
 	Metin result = decodeMorse(morseCodez); 
 	result = result.lowercase();
-	toClipboard(result); // this code sometimes doesn't copy whole result.
+	toClipboard(result); // this code sometimes doesn't copy the whole result.
 	
 	cout << "Output copied to your clipboard! " << endl;
 
